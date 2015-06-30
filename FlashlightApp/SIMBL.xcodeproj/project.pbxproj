@@ -279,7 +279,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					276144C0105F51CA00F906F6 = {
 						DevelopmentTeam = VPN8ZW6EAC;
@@ -424,6 +424,7 @@
 				INFOPLIST_FILE = "SIMBL Agent/Info.plist";
 				INSTALL_PATH = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nateparrott.Flashlight.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PRODUCT_VERSION = 14;
 				PROVISIONING_PROFILE = "";
@@ -441,6 +442,7 @@
 				INFOPLIST_FILE = "SIMBL Agent/Info.plist";
 				INSTALL_PATH = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nateparrott.Flashlight.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PRODUCT_VERSION = 14;
 				PROVISIONING_PROFILE = "";
@@ -460,6 +462,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = rez/Info.plist;
 				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.norio-nomura.${PRODUCT_NAME:rfc1034identifier}.${WRAPPER_EXTENSION}";
 				PRODUCT_NAME = Flashlight;
 				WRAPPER_EXTENSION = osax;
 			};
@@ -479,6 +482,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = rez/Info.plist;
 				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.norio-nomura.${PRODUCT_NAME:rfc1034identifier}.${WRAPPER_EXTENSION}";
 				PRODUCT_NAME = Flashlight;
 				WRAPPER_EXTENSION = osax;
 			};
@@ -490,6 +494,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = src/SIMBL_Prefix.pch;

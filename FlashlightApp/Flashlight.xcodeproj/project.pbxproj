@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -63,7 +63,6 @@
 		5F8CCECE1AD3A660009D200E /* largetext.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEBB1AD3A65F009D200E /* largetext.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F8CCED11AD3ACA2009D200E /* flashlight.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCED01AD3ACA2009D200E /* flashlight.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F916B601AD353DF0078B4F4 /* PluginListContent.html in Resources */ = {isa = PBXBuildFile; fileRef = 5F916B5F1AD353DF0078B4F4 /* PluginListContent.html */; };
-		5F931C0E1AFADFCF00D44DA9 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F931C0D1AFADFCF00D44DA9 /* Crashlytics.framework */; };
 		5F9D7C381A63207200CDDE5C /* PrefEditorWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7C341A63207200CDDE5C /* PrefEditorWindow.m */; };
 		5F9D7C391A63207200CDDE5C /* PrefEditorTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7C361A63207200CDDE5C /* PrefEditorTableView.m */; };
 		5F9D7C3A1A63207200CDDE5C /* PrefEditorWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9D7C371A63207200CDDE5C /* PrefEditorWindow.xib */; };
@@ -160,6 +159,7 @@
 		0435914AADD746D7BD448E6F /* libPods-Flashlight.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Flashlight.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05413329E3C2229FC2FE2736 /* Pods-Flashlight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashlight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flashlight/Pods-Flashlight.debug.xcconfig"; sourceTree = "<group>"; };
 		406B089D37D45E210BD6A866 /* Pods-Flashlight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashlight.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flashlight/Pods-Flashlight.release.xcconfig"; sourceTree = "<group>"; };
+		4B1A49B81B424A7200D21CAC /* Flashlight.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Flashlight.entitlements; sourceTree = "<group>"; };
 		5F11C2FD1A2B0834005A1731 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5F2B37721A3E42E500AC2C19 /* SearchPluginEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPluginEditorWindowController.h; sourceTree = "<group>"; };
 		5F2B37731A3E42E500AC2C19 /* SearchPluginEditorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchPluginEditorWindowController.m; sourceTree = "<group>"; };
@@ -327,7 +327,6 @@
 				6C564485159E7C0800215467 /* Cocoa.framework in Frameworks */,
 				6C5644B8159E7D3900215467 /* ServiceManagement.framework in Frameworks */,
 				CB91ECF0DC65EF541475B8F4 /* libPods-Flashlight.a in Frameworks */,
-				5F931C0E1AFADFCF00D44DA9 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +511,7 @@
 		6C564475159E7C0800215467 = {
 			isa = PBXGroup;
 			children = (
+				4B1A49B81B424A7200D21CAC /* Flashlight.entitlements */,
 				6C6AF45E1842DE3700E2ACBB /* README.md */,
 				6C56448A159E7C0800215467 /* FlashlightApp */,
 				6C3A4C2B159E7E6F00985CCD /* SIMBL.xcodeproj */,
@@ -631,15 +631,20 @@
 		6C564477159E7C0800215467 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					6C56447F159E7C0800215467 = {
-						DevelopmentTeam = VPN8ZW6EAC;
+						DevelopmentTeam = YU3R5Z37Y2;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
 			buildConfigurationList = 6C56447A159E7C0800215467 /* Build configuration list for PBXProject "Flashlight" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -724,7 +729,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run c00a274f2c47ad5ee89b17ccb2fdb86e8d1fece8 cf3ca8aefff328c68d183c05c288062a57dcbbf7f5bbd8f43418c90e18fca3bf";
+			shellScript = "";
+			showEnvVarsInLog = 0;
 		};
 		600691463A7845E1B87A281D /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -878,6 +884,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -895,6 +902,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACH_O_TYPE = mh_execute;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -926,7 +934,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACH_O_TYPE = mh_execute;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -935,6 +945,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05413329E3C2229FC2FE2736 /* Pods-Flashlight.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
@@ -952,6 +963,7 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Pods-gpoaxpycjinulnbzpvilkgtvohcj/Build/Products/Debug",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nateparrott.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -962,6 +974,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 406B089D37D45E210BD6A866 /* Pods-Flashlight.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
@@ -978,6 +991,7 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Pods-gpoaxpycjinulnbzpvilkgtvohcj/Build/Products/Debug",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nateparrott.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
